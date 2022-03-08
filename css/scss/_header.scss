@@ -1,0 +1,281 @@
+.header-top {
+    background-color: #000000;
+    .flext-left {
+        display: flex;
+        img {
+            margin-right: 5px;
+        }
+    }
+    .address-text {
+        span {
+            color: #fff;
+            &:last-child {
+                margin-left: 15px;
+            }
+        }
+    }
+    .header-flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        .flex-right {
+            ul {
+                display: flex;
+                list-style: none;
+                align-items: center;
+                li {
+                    margin-right: 5px;
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+                .header-button {
+                    margin-right: 5px;
+                    background: #550E0A;
+                    color: #fff;
+                    padding: 6px 10px;
+                    a {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.header-main {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    .main-wrapper {
+        display: flex;
+        align-items: center;
+        .header-commit {
+            display: flex;
+            margin-left: auto;
+            .block-item {
+                display: flex;
+                align-items: center;
+                margin-right: 60px;
+                .box-text {
+                    margin-left: 15px;
+                    h4 {
+                        font-size: 14px;
+                        text-transform: uppercase;
+                        font-weight: 700;
+                    }
+                }
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
+
+.header-bottom {
+    background-color: #000000;
+    .bottom-nav {
+        .logo {
+            margin-right: 10px;
+            margin-bottom: 20px;
+        }
+        .navbar-nav {
+            height: 55px;
+            line-height: 42px;
+            .nav-item {
+                a.nav-link {
+                    font-size: 14px;
+                    text-transform: capitalize;
+                    color: #fff;
+                    font-weight: 600;
+                    padding-left: 33px;
+                    padding-right: 33px;
+                }
+                &:hover {
+                    background: #FAC232;
+                }
+            }
+            .nav-item.active {
+                background-color: #FAC232;
+            }
+        }
+        .navbar {
+            padding-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+        }
+    }
+    .bottom-nav .navbar-nav .nav-item {
+        position: relative;
+        border-right: 1px solid #707070;
+    }
+    #mega-menu ul {
+        list-style: none;
+    }
+    .nav-item .sub-menu li {
+        position: relative;
+        line-height: 30px;
+        a {
+            color: #333 !important;
+        }
+    }
+    span.btn-dropmenu {
+        position: absolute;
+        right: 19px;
+        color: #fff;
+        top: 10px;
+    }
+    @media(max-width: 991px) {
+        #mega-menu ul {
+            padding-left: 10px;
+        }
+        #mega-menu ul {
+            display: none;
+        }
+        .navbar-nav .nav-item .sub-menu {
+            display: none;
+            padding-left: 20px;
+        }
+        .btn-dropmenu i.fa.rotate {
+            transform: rotate(-180deg);
+            transition: all 0.3s;
+        }
+        .btn-dropmenu i {
+            padding: 8px 11px;
+            background: red;
+            border-radius: 33px;
+            color: #fff;
+        }
+    }
+    @media(min-width: 991px) {
+        .navbar-nav .nav-item .sub-menu {
+            box-shadow: 0 2px 8px #bebebe;
+            border-radius: 5px;
+            position: absolute;
+            background: #fff;
+            min-width: 200px;
+            z-index: 1000;
+            padding-left: 0;
+            list-style: none;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            visibility: hidden;
+            animation-name: menu-effect-out;
+            animation-duration: 0.2s;
+            animation-direction: alternate;
+            animation-fill-mode: forwards;
+            animation-timing-function: linear;
+            transition: all 0.2s ease;
+            height: auto;
+        }
+        .nav-item .sub-menu .sub-menu {
+            position: absolute;
+            background: #fff;
+            left: 100%;
+            top: 0;
+            margin-left: 1px;
+            visibility: hidden;
+        }
+        .sub-menu .btn-dropmenu {
+            display: none;
+        }
+        .nav-item .sub-menu li:hover>.sub-menu {
+            animation-name: menu-effect-in;
+            visibility: visible;
+            animation-direction: alternate;
+            animation-fill-mode: backwards;
+            animation-timing-function: linear;
+        }
+        .nav-item .sub-menu a {
+            text-transform: inherit !important;
+            padding: 5px 20px;
+        }
+        .nav-item:hover>.sub-menu {
+            animation-name: menu-effect-in;
+            visibility: visible;
+            animation-direction: alternate;
+            animation-fill-mode: backwards;
+            animation-timing-function: linear;
+        }
+        @keyframes menu-effect-in {
+            from {
+                height: 0px;
+                opacity: 0;
+            }
+            to {
+                height: 200px;
+                opacity: 0.8;
+            }
+        }
+        @keyframes menu-effect-out {
+            from {
+                height: 200px;
+                opacity: 0.8;
+            }
+            to {
+                height: 0;
+                opacity: 0;
+            }
+        }
+        .bottom-nav .sub-menu li a {
+            padding-left: 20px !important;
+        }
+        .bottom-nav .navbar-nav .menu-item-mega a {
+            position: relative;
+        }
+        .menu-item-mega {
+            position: static !important;
+        }
+        .menu-item-mega .mega-item a {
+            text-transform: inherit;
+        }
+        div#mega-menu {
+            position: absolute;
+            width: 100%;
+            background: #fff;
+            right: 0px;
+            z-index: 100;
+            visibility: hidden;
+            box-shadow: 0 2px 8px #bebebe;
+        }
+        div#mega-menu .mega-item a {
+            color: #333;
+            padding-left: 0;
+            padding-right: 0;
+            text-transform: inherit;
+        }
+        div#mega-menu ul {
+            list-style: none;
+            display: flex;
+            width: 100%;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-left: auto;
+            padding-left: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        div#mega-menu .mega-item {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 25%;
+            flex: 0 0 25%;
+            max-width: 25%;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            display: flex;
+        }
+        div#mega-menu .mega-item:before {
+            content: "\f105";
+            display: block;
+            color: #FF000A;
+            font-family: 'FontAwesome';
+            margin-right: 5px;
+            font-weight: bold;
+        }
+        .bottom-nav .nav-item:hover #mega-menu {
+            visibility: visible;
+        }
+    }
+}
